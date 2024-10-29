@@ -1,0 +1,65 @@
+<!DOCTYPE html>  
+<html lang="en">  
+
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Search Book Page</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'newapp/style1.css' %}"> 
+</head>  
+
+<body>  
+  <div class="Retrievebox">  
+      <form action="{% url 'submit_data' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="form_type" value="searchbook_form">  
+        <fieldset>
+            <legend>Search Books</legend>
+            <label for="Bookname">Book Name:</label>
+            <input type="text" id="Bookname" name="Bookname" required>
+            <label for="Author">Author Name:</label>
+            <input type="text" id="Author" name="Author" required>
+            <label for="Edition">Edition:</label>
+            <select id="Edition" name="Edition">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select><br><br>
+            <input type="submit" value="Search">
+            <input type="reset" value="Reset">
+        </fieldset>
+      </form>
+  </div>
+      
+    <div class="results" id="results"> 
+      <h2>Search Results</h2> 
+      <div>
+        <table border='1'>
+          <tr>
+            <th>BOOK ID</th>
+            <th>BOOK Name</th>
+            <th>AUTHOR</th>
+            <th>GENRE</th>
+          </tr>
+          {% for x in mybook %}
+          <tr>
+            <td>{{ x.book_id }}</td>
+            <td>{{ x.book_name }}</td>
+            <td>{{ x.author_name }}</td>
+            <td>{{ x.genre }}</td>
+          </tr>
+          {% empty %}  
+            <tr>  
+              <td colspan="4">No results found. Please search for a book.</td>  
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+
+    
+</body>  
+
+</html>

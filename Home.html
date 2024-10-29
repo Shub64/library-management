@@ -1,0 +1,53 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Library Home Page</title>
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'newapp/style2.css' %}">
+</head>  
+<body>  
+
+    <header>  
+        <h1>Welcome to Our Library</h1>  
+        <nav style="text-align: right;">  
+            <a href="{% url 'Home' %}">Home</a>  
+            <a href="{% url 'login' %}">Login</a>  
+            <a href="{% url 'registeration' %}">Register</a>  
+            <a href=#>About Us</a>  
+            <a href=#>Contact</a>  
+        </nav>  
+    </header>  
+
+    <button class="menu-toggle">☰ Menu</button>  
+
+    <div class="menu" id="menu">  
+        <h3>Menu Options</h3>  
+        <ul>  
+            <li><a href="{% url 'searchbook' %}" target="iframe_a">Search Books</a></li>  
+            <li><a href="{% url 'viewbooks' %}" target="iframe_a">View Books</a></li>  
+            <li><a href="{% url 'issuebook' %}" target="iframe_a">Issue Books</a></li>  
+            <li><a href="{% url 'returnbook' %}" target="iframe_a">Return Books</a></li>  
+            <li><a href="{% url 'home1' %}" target="iframe_a">Donate Books</a></li>  
+        </ul>  
+         
+    </div>
+    
+    <script>  
+        // Toggle menu visibility  
+        document.querySelector('.menu-toggle').addEventListener('click', function() {  
+            document.getElementById('menu').classList.toggle('active');  
+        });  
+    </script>
+
+    <div class="iframe" style="height: 100%; width: 100%; position: fixed;left: 250px;">
+    <iframe  src="{% url 'home1' %}" name="iframe_a" style=" height: 75.5%; width: 83%;" title="Iframe Example"></iframe>
+    </div>
+
+    <footer style="background-color: rgba(0, 0, 0, 0.7);">  
+        <p>&copy; 2023 Your Library Name. All rights reserved.</p>  
+    </footer>  
+
+</body>  
+</html>

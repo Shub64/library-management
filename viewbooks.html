@@ -1,0 +1,68 @@
+<!DOCTYPE html>  
+<html lang="en">  
+
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>View Books</title> 
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'newapp/style1.css' %}">   
+</head>  
+
+<body>  
+    <div class="Retrievebox">  
+        <form action="{% url 'submit_data' %}" method="post"> 
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="viewbooks_form"> 
+            <fieldset>  
+                <legend>View Books</legend>  
+                <div id="Catoption">
+                    <label for="Bookname">Book Name:</label>
+                    <input type="text" id="Bookname" name="Bookname">
+                    <label for="Category">Select Categories: </label><br>
+                    <select id="Category" name="Category">
+                        <option value="Novel">Novel</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Comic">Comic</option>
+                        <option value="Poetry">Poetry</option>
+                        <option value="Memoic">Memoic</option>
+                        <option value="Autobiography">Autobiography</option>
+                        <option value="Other">Others</option>
+                        <option value=""selected></option>
+                      </select>  
+                </div><br>  
+
+                <input type="submit" value="Search"> 
+                <input type="reset" value="Reset"> 
+            </fieldset>  
+        </form>  
+    </div>
+    
+    <div class="results" id="results">  
+        <h2>Search Results</h2>  
+        
+        <div>
+            <table border='1'>
+                <tr>
+                  <th>BOOK NAME</th>
+                  <th>BOOK AUTHUR</th>
+                  <th>EDITION</th>
+                </tr>
+                {% for x in mybook %}
+                  <tr>
+                    <td>{{ x.book_name }}</td>
+                      <td>{{ x.author_name }}</td>
+                    <td>{{ x.edition }}</td>
+                  </tr>
+                  {% empty %}  
+                  <tr>  
+                    <td colspan="3">No results found. Please search for a book.</td>  
+                  </tr>
+                {% endfor %}
+              </table>
+        </div>
+
+    </div>
+</body>  
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>  
+<html lang="en">  
+
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Issue Books</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'newapp/style1.css' %}">   
+</head>  
+
+<body>  
+    <div class="Retrievebox">  
+        <form action="{% url 'submit_data' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="issuebook_form">  
+            <fieldset>  
+                <legend>Issue Books</legend>  
+                <label for="Bookname">Book Name:</label>  
+                <input type="text" id="Bookname" name="Bookname" required>  
+                <label for="BookID">Book ID:</label>  
+                <input type="number" id="BookID" name="BookID" min="1000" max="1100" required><br>
+                <span>Date will be saved automatically</span> <br><br> 
+                <input type="submit" value="Issue">
+                <input type="reset" value="Reset">  
+            </fieldset>  
+        </form>  
+    </div>
+    
+    <div class="results" id="results">  
+        <h2>Results</h2>  
+        <div>
+            <table border='1'>
+                <tr>
+                  <th>BOOK ID</th>
+                  <th>BOOK Name</th>
+                  <th>AUTHOR</th>
+                  <th>EDITION</th>
+                </tr>
+                {% for x in mybook %}
+                  <tr>
+                    <td>{{ x.book_id }}</td>
+                    <td>{{ x.book_name }}</td>
+                    <td>{{ x.author_name }}</td>
+                    <td>{{ x.edition}}</td>
+                  </tr>
+                  <tr>  
+                    <td colspan="4">The following book have been issued to you.<br>
+                        Date of Issue: {{ current_date|date:"F j, Y" }}</td>  
+                  </tr>
+                  {% empty %}  
+                  <tr>  
+                    <td colspan="4">Enter details to Issue your book.</td>  
+                  </tr>
+                {% endfor %}
+              </table>
+        </div>  
+    </div>
+</body>  
+
+</html>

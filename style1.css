@@ -1,0 +1,142 @@
+* {  
+    margin: 0; 
+    padding: 0;   
+    box-sizing: border-box;  
+}  
+
+body {  
+    background-color: rgba(107, 109, 110, 0.7);  
+    font-family: Arial, sans-serif; /* Adds a modern font for better readability */  
+    color: #333; /* Dark gray text for contrast */  
+    line-height: 1.6; /* Improved line height for better readability */  
+    padding: 20px; /* Add padding around the body */  
+    display: flex;
+    justify-content: space-between;
+}  
+
+.Retrievebox {
+    width: 30%;  
+    background-color: #fff; /* White background for the form */  
+    border-radius: 8px; /* Rounded corners */  
+    padding: 20px; /* Padding inside the box */  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */  
+    font-size: large; /* Larger text size for clarity */  
+    max-width: 350px; /* Max width for better layout */  
+    margin-right: 20px;  
+    max-height: fit-content;
+}  
+
+.results { 
+    position:relative;
+    left: 1px; 
+    background-color: #fff; /* White background for results */  
+    border-radius: 8px; /* Rounded corners */  
+    padding: 20px; /* Padding inside the results box */  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */  
+    flex: 1; /* Allow results to take remaining space */  
+    min-width: 200px; /* Minimum width for results box */  
+}
+
+.result-item {  
+    border-bottom: 1px solid #ccc; /* Separator between results */  
+    padding: 10px 0; /* Padding for result item */  
+}  
+
+.result-item:last-child {  
+    border-bottom: none; /* Remove last item's border */  
+}
+
+fieldset {  
+    border: 1px solid #ccc; /* Light gray border around the fieldset */  
+    padding: 10px; /* Padding inside the fieldset */  
+}  
+
+legend {  
+    font-weight: bold; /* Bold legend for emphasis */  
+    margin-bottom: 10px; /* Space below the legend */  
+}  
+
+label.Retrievebox {  
+    display: block; /* Stack labels vertically */  
+    margin-bottom: 5px; /* Space below each label */  
+}  
+
+input[type="text"] {  
+    width: 100%; /* Full width input fields */  
+    padding: 8px; /* Padding inside input */  
+    margin-bottom: 15px; /* Space between inputs */  
+    border: 1px solid #ccc; /* Light gray border for inputs */  
+    border-radius: 4px; /* Slightly rounded corners */  
+}  
+
+input[type="submit"] {  
+    background-color: #28a745; /* Green background for the button */  
+    color: white; /* White text color */  
+    border: none; /* Remove border */  
+    border-radius: 4px; /* Slightly rounded corners */  
+    padding: 10px 15px; /* Padding for the button */  
+    cursor: pointer; /* Pointer cursor on hover */  
+    font-weight: bold; /* Bold text for emphasis */  
+}  
+
+input[type="submit"]:hover {  
+    background-color:crimson; /* Darker green on hover */  
+}
+
+input[type="reset"] {  
+    background-color: #28a745; /* Green background for the button */  
+    color: white; /* White text color */  
+    border: none; /* Remove border */  
+    border-radius: 4px; /* Slightly rounded corners */  
+    padding: 10px 15px; /* Padding for the button */  
+    cursor: pointer; /* Pointer cursor on hover */  
+    font-weight: bold; /* Bold text for emphasis */  
+}  
+
+input[type="reset"]:hover {  
+    background-color: #ec822b; /* Darker green on hover */  
+}
+
+input[type="button"]{
+    background-color: #5d84e8; /* Green background for the button */  
+    color: white; /* White text color */  
+    border: none; /* Remove border */  
+    border-radius: 4px; /* Slightly rounded corners */  
+    padding: 10px 15px; /* Padding for the button */  
+    cursor: pointer; /* Pointer cursor on hover */  
+    font-weight: bold; 
+
+}
+
+input[type="button"]:hover {  
+    background-color: #5810e9; /* Darker green on hover */  
+}
+
+label.Catoption{
+    display: inline-block;
+
+}
+
+input[type="checkbox"] { 
+    display: inline-block;
+
+}  
+
+
+table {  
+    width: 100%;  
+    border-collapse: collapse;  
+}  
+
+th, td {  
+    padding: 12px;  
+    text-align: left;  
+    border-bottom: 1px solid #ccc;  
+}  
+
+th {  
+    background-color: #f2f2f2;  
+    color: #333;  
+    font-weight: bold;  
+}  
+

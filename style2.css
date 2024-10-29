@@ -1,0 +1,96 @@
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+
+body {  
+    font-family: Arial, sans-serif;  
+    background: url('images/libraryimage2.jpg') no-repeat center center fixed; /* Replace with your image path */  
+    background-size: cover;  
+    color: #333;  
+    position: relative;  
+}  
+
+header {  
+    background-color: rgba(0, 0, 0, 0.7);  
+    color: white;  
+    padding: 20px 0;  
+    text-align: center;  
+    width: 100%;  
+}  
+
+nav {  
+    margin: 20px 0;  
+}  
+
+nav a {  
+    color: white;  
+    margin: 0 15px;  
+    text-decoration: none;  
+    font-weight: bold;  
+}  
+
+nav a:hover {  
+    text-decoration: underline; 
+}  
+
+
+/* Sliding Menu */  
+.menu {  
+    margin-top: 64px;
+    position:fixed;  
+    top: 0;  
+    left: -250px; /* Hidden by default */  
+    width: 250px;  
+    height: 100%;  
+    background-color: rgba(255, 255, 255, 0.9);  
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);  
+    transition: left 0.3s ease; /* Smooth slide effect */  
+    padding: 20px;  
+    z-index: 1000; /* Make sure it is on top */  
+}  
+
+.menu.active {  
+    left: 0; /* Show menu */  
+}  
+
+.menu a { 
+    display: block;  
+    margin: 15px 0;  
+    text-decoration: none;  
+    color: #333;  
+}  
+
+.menu a:hover {  
+    text-decoration: underline;  
+}  
+
+.menu-toggle{
+    position: fixed; /* Fix the button position to the viewport */
+    top: 10px; /* Distance from the top of the screen */
+    left: 10px; /* Distance from the left of the screen */
+    padding: 10px 15px; /* Padding around the text */
+    background-color: #e8c132; /* Background color of the button */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 16px; /* Font size of the text */
+    z-index: 1000; /* Ensure the button appears on top of other elements */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#contentIframe{
+    position: relative;
+}
+
+footer {
+    text-align: center;  
+    padding: 10px 0;  
+    background-color: rgba(0, 0, 0, 0.7);  
+    color: white;  
+    position: fixed;  
+    width: 100%;  
+    bottom: 0; 
+}

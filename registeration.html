@@ -1,0 +1,47 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Registeration Page</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'newapp/style.css' %}">
+    <style>
+        body{
+            height: 100vh;  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            font-family: Arial, sans-serif;
+            background: url("{% static 'newapp/images/libraryimage4.jpg' %}") no-repeat center center fixed;  
+            background-size: cover;
+        }
+    </style> 
+</head>
+<body>
+    <div class="login-container">  
+        <h2>Register</h2>  
+        <form action="{% url 'submit_data' %}" method="post"">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="register_form">  
+            <div class="input-group">  
+                <label for="username">Username:</label>  
+                <input type="text" id="username" name="username" required>  
+            </div>
+            <div class="input-group">  
+                <label for="Birthday">Birthday:</label>  
+                <input type="date" id="Birthday" name="Birthday" min="1950-01-01" max="2020-12-31"required>  
+            </div>
+            <div class="input-group">  
+                <label for="contact">Contact no:</label>  
+                <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required>  
+            </div>  
+            <div class="input-group">  
+                <label for="password">Password:</label>  
+                <input type="password" id="password" name="password" required>  
+            </div>  
+            <button type="submit">submit</button>  
+            <a href="{% url 'login' %}" target="_self" style="display: block; text-align: center; margin-top: 10px;">Login</a>  
+        </form>  
+    </div>  
+</body>
